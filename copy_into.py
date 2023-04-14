@@ -5,10 +5,10 @@ import requests
 
 def main():
 
-    sql_api = "http://ac0eacaf182f14c37b9f4581dbfa1c65-1827956046.ap-south-1.elb.amazonaws.com:9047/api/v3/sql"
+    sql_api = "http://<<dremio_host>>:9047/api/v3/sql"
 
     headers_sql = {
-        'Authorization': "_dremiojoun9qk2s1nqakqn7pm0siurti",
+        'Authorization': "_dremio<<token>>",
         'Content-Type': "application/json"
     }
 
