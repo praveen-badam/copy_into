@@ -1,0 +1,18 @@
+[{
+  "target_table":"test.pbadamcopyinto.dataoutput.\"employee_demo1\"",
+  "source_data":"'@test/pbadamcopyinto/datainput/employee_demo.csv'",
+  "file_format":"'csv'",
+  "record_delimeter":"'\n'",
+  "timestamp_format":"'YYYY-MM-DD HH24:MI:SS.FFF'",
+  "date_format":"'YYYY-MM-DD'",
+  "time_format":"'HH24:MI:SS'"
+},
+{
+  "target_table":"test.pbadamcopyinto.dataoutput.\"employee_demo2\"",
+  "source_data":"'@test/pbadamcopyinto/datainput/employee_demo.csv'",
+  "file_format":"'csv'",
+  "record_delimeter":"'\n'",
+  "timestamp_format":"'YYYY-MM-DD HH24:MI:SS.FFF'",
+  "date_format":"'YYYY-MM-DD'",
+  "time_format":"'HH24:MI:SS'"
+}]
