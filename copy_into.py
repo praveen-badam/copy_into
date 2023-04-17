@@ -11,6 +11,8 @@ def main():
         'Authorization': "_dremio<<token>>",
         'Content-Type': "application/json"
     }
+    
+# Opening parm file
 
     f = open('copy_into_V4.json')
 
@@ -18,6 +20,8 @@ def main():
 
     for data in file_data:
 
+# Extracting all parameters
+        
         target_table = data["target_table"]
         source_data = data["source_data"]
         file_format = data["file_format"]
@@ -25,6 +29,8 @@ def main():
         timestamp_format = data["timestamp_format"]
         date_format = data["date_format"]
         time_format = data["time_format"]
+
+# Constructing SQL Payload
 
         sql_payload = {
             "sql": "COPY INTO %s "
@@ -40,6 +46,8 @@ def main():
 
 
         data_payload = json.dumps(sql_payload)
+        
+# Making SQL Api
 
         response_sql = requests.request("POST", sql_api, data=data_payload, headers=headers_sql)
 
@@ -69,7 +77,7 @@ def main():
                     time.sleep(30)
                     continue
             except Exception as e:
-                print("something went wrong")
+                print("something went wrong, please check the logs")
                 break
 
 
