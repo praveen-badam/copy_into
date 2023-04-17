@@ -33,37 +33,60 @@ Guidenece to usage:
    
 * Edit input parm file with the below details:
 
-target_table - Iceberg table to which data needs to be copied.
-source_data - File details from which data needs to be copied.
+target_table - Iceberg table to which data needs to be copied
+
+source_data - File details from which data needs to be copied
+
 file_format - The format of the file( CSV or JSON)
-record_delimeter - Record Delimiter.
+
+record_delimeter - Record Delimiter
+
 timestamp_format - Time Stamp format of the input fields ( If there are any)
+
 date_format - date format of the input fields (if there are any)
+
 time_format - time format of the input fields (if there are any)
+
+etc....
 
 If we have requirement to load multiple tables (one after another), then update the above parametres for each in dictonary format and do a comma (,) seperation.
 
 Ex:
 
-[{
-  "target_table":"test.pbadamcopyinto.dataoutput.\"employee_demo1\"",
+    [
+     {"target_table":"test.pbadamcopyinto.dataoutput.\"employee_demo1\"",
+  
   "source_data":"'@test/pbadamcopyinto/datainput/employee_demo.csv'",
+  
   "file_format":"'csv'",
+  
   "record_delimeter":"'\n'",
+  
   "timestamp_format":"'YYYY-MM-DD HH24:MI:SS.FFF'",
+  
   "date_format":"'YYYY-MM-DD'",
+  
   "time_format":"'HH24:MI:SS'"
-},
-{
-  "target_table":"test.pbadamcopyinto.dataoutput.\"employee_demo2\"",
-  "source_data":"'@test/pbadamcopyinto/datainput/employee_demo.csv'",
-  "file_format":"'csv'",
-  "record_delimeter":"'\n'",
-  "timestamp_format":"'YYYY-MM-DD HH24:MI:SS.FFF'",
-  "date_format":"'YYYY-MM-DD'",
-  "time_format":"'HH24:MI:SS'"
-}]
+    },
 
+   {
+  "target_table":"test.pbadamcopyinto.dataoutput.\"employee_demo2\"",
+  
+  "source_data":"'@test/pbadamcopyinto/datainput/employee_demo.csv'",
+  
+  "file_format":"'csv'",
+  
+  "record_delimeter":"'\n'",
+  
+  "timestamp_format":"'YYYY-MM-DD HH24:MI:SS.FFF'",
+  
+  "date_format":"'YYYY-MM-DD'",
+  
+  "time_format":"'HH24:MI:SS'"
+    }
+   ]
+
+In case customer have  other attributes to pass (which are not covered here), they can pass those attributes in key-value format in the parm file and capture in copy_into.py script.
 
 Command to run:
 
