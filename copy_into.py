@@ -56,7 +56,7 @@ def main():
         job_id = json.loads(response_sql_text)["id"]
         print("job_id:", job_id)
 
-        job_status_api = "http://ac0eacaf182f14c37b9f4581dbfa1c65-1827956046.ap-south-1.elb.amazonaws.com:9047/api/v3/job/%s" % (
+        job_status_api = "http://<<dremio_host>>:9047/api/v3/job/%s" % (
             job_id)
 
         while True:
