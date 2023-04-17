@@ -1,6 +1,14 @@
 
 * In V24 Dremio released "COPY INTO SQL" command to help customers to load csv/json data into Apache Iceberg tables.
 
+  Important Links:
+  
+  https://docs.dremio.com/software/data-formats/copying-data-into-tables/
+  
+  https://docs.dremio.com/software/sql-reference/sql-commands/copy-into-table/
+  
+
+
 * This project is aimed to make customers to execute "COPY INTO" in their batch modules in a easy way.
 
 * This project contanins 2 files. 
